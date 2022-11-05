@@ -9,20 +9,20 @@ export const Modal = ({ closeModal, largeimageurl }) => {
     return () => {
       document.removeEventListener('keydown', handleKeyDowm);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleKeyDowm = e => {
-    console.log(e.code);
     if (e.code === 'Escape') {
       closeModal();
     }
   };
 
-  const handleClick = e => {
+  function handleClick(e) {
     if (e.target === e.currentTarget) {
       closeModal();
     }
-  };
+  }
   return (
     <div className={css.overlay} onClick={handleClick}>
       <div className={css.modal}>
